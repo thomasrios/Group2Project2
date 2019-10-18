@@ -1,22 +1,39 @@
-# Project 2: Requirements
 
-* **The requirements for Project #2 are as follows:**
 
-* Must use a Node and Express Web Server
+## About <a name = "about"></a>
 
-* Must be backed by a MySQL Database with a Sequelize ORM  
+Write about 1-2 paragraphs describing the purpose of your project.
 
-* Must have both GET and POST routes for retrieving and adding new data
+## Getting Started <a name = "getting_started"></a>
 
-* Must be deployed using Heroku (with Data)
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
-* Must utilize at least one new library, package, or technology that we haven’t discussed
+### Prerequisites
 
-* Must have a polished frontend / UI 
+What things you need to install the software and how to install them.
 
-* Must have folder structure that meets MVC Paradigm
+```
+Give examples
+```
 
-* Must meet good quality coding standards (indentation, scoping, naming)
+### Installing
 
-* Must not expose sensitive API key information on the server, see [Protecting-API-Keys-In-Node.md](../../../../01-Class-Content/10-nodejs/03-Supplemental/Protecting-API-Keys-In-Node.md)
+A step by step series of examples that tell you how to get a development env running.
 
+Say what the step will be
+
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo.
+
+## Usage <a name = "usage"></a>
+
+Add notes about how to use the system.
