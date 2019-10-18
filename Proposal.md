@@ -16,6 +16,10 @@
 
 # APIs to be Used
 
+- Possible location API that locates players by school district.
+
+- An API that charts data for each prospect so recruiters can sort through them easier.
+
 
 
 # Rough Breakdown of Tasks
