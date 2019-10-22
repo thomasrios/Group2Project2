@@ -3,17 +3,17 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Athletes.findAll({}).then(function(dbExamples) {
-      res.render("index.html", dbExamples);
+    db.Athletes.findAll({}).then(function(dbResponse) {
+      res.render("index.html", dbResponse);
     });
   });
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Athletes.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
+      dbResponse
     ) {
-      res.render("example.html");
+      res.render("example.html", dbResponse);
     });
   });
 
