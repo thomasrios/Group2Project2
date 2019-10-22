@@ -17,6 +17,10 @@ body {
     background-size: cover;
 }
 
+.list-group-item {
+  line-height: 2.5;
+}
+
 /* header {
     position: relative;
     background-color: black;
