@@ -24,7 +24,7 @@
 
 # Rough Breakdown of Tasks
 
-*Aaron and Randal* **server side**
+*Aaron and Randall* **server side**
 
 - Apply functionality to searches
 - Set up routes to different web pages
