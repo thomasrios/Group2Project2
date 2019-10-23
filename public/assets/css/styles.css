@@ -1,0 +1,56 @@
+.list-group-item {
+  line-height: 2.5;
+}
+
+.list-group-item {
+  line-height: 2.5;
+ }
+ body {
+  background-image: url("https://scontent-lhr3-1.cdninstagram.com/vp/987af46e1f52dbb3355d304eaecc74d3/5E5E6116/t51.2885-15/e35/53618420_1030944700431077_4664167652974601734_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com&_nc_cat=105")
+}
+img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 100px;
+   margin-bottom: 100px;
+   width: auto;
+   opacity: .9;
+   float: left;
+   border-image: round;
+   border-radius: 10px;
+   border-width: 2px;
+}
+.navbar-brand {
+ font-family: 'Black Ops One', cursive;
+}
+.bg-light {
+ background-color: black !important;
+ opacity: .8;
+}
+.navbar-light .navbar-brand{
+ color: white;
+}
+.navbar-light .navbar-nav .nav-link{
+ color: white;
+ font-family: 'Black Ops One', cursive;
+}
+#d-block w-100 {
+ margin-top: 100px;
+ width:640px;
+ height:500px; 
+ border-style: solid;
+ border-radius: 10px;
+ border-width: 2px;
+}
+body {
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+h2 {
+ margin-top: 315px;
+ margin-left: 100px;
+ color: white;
+ font-style: bold;
+ font-family: 'Black Ops One', cursive;
+}
