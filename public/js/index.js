@@ -1,10 +1,12 @@
 // Get references to page elements
-var $athleteName = $("#athlete-name")
+var $athletefirstname = $("#athlete-firstname");
+var $athletelastname = $("#athlete-lastname")
 var $athletePosition = $("#athlete-position");
 var $athleteYear = $("#athlete-year");
 var $athleteHeight = $("#athlete-height");
 var $athleteWeight = $("#athlete-weight");
-var $athleteSchool = $("athlete-school");
+var $athleteSchool = $("#athlete-school");
+var $athleteFilm = $("#athlete-film");
 var $submitBtn = $("#submit");
 var $playerList = $("#player-list");
 
@@ -91,17 +93,18 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var athlete = {
-    name: $athleteName.val().trim(),
+    name: $athletefirstname.val().trim() + $athletelastname.val().trim(),
     position: $athletePosition.val().trim(),
     year: $athleteYear.val().trim(),
     height: $athleteHeight.val().trim(),
     weight: $athleteWeight.val().trim(),
-    school: $athleteSchool.val().trim()
+    school: $athleteSchool.val().trim(),
+    film: $athleteFilm.val().trim()
   };
 
   console.log(athlete);
 
-  if (!(athlete.name && athlete.position && athlete.year && athlete.height && athlete.weight && athlete.school)) {
+  if (!(athlete.name && athlete.position && athlete.year && athlete.height && athlete.weight && athlete.school && athlete.film)) {
     alert("You must enter a value into each field!");
     return;
   }
@@ -110,12 +113,14 @@ var handleFormSubmit = function(event) {
     refreshAthletes();
   });
 
-  $athleteName.val("");
+  $athletefirstname.val("");
+  $athletelastname.val("");
   $athletePosition.val("");
   $athleteYear.val("");
   $athleteHeight.val("");
   $athleteWeight.val("");
   $athleteSchool.val("");
+  $athleteFilm.val("");
 };
 
 // handleDeleteBtnClick is called when an athlete's delete button is clicked

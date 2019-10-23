@@ -3,9 +3,10 @@ module.exports = function(sequelize, DataTypes) {
     name: DataTypes.STRING,
     position: DataTypes.STRING,
     year: DataTypes.INTEGER,
-    height: DataTypes.DECIMAL,
+    height: DataTypes.INTEGER,
     weight: DataTypes.INTEGER,
-    school: DataTypes.STRING
+    school: DataTypes.STRING,
+    film: DataTypes.STRING
   });
   return Athletes;
 };
