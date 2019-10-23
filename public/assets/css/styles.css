@@ -1,56 +1,281 @@
 .list-group-item {
   line-height: 2.5;
 }
-
-.list-group-item {
-  line-height: 2.5;
- }
- body {
+body {
   background-image: url("https://scontent-lhr3-1.cdninstagram.com/vp/987af46e1f52dbb3355d304eaecc74d3/5E5E6116/t51.2885-15/e35/53618420_1030944700431077_4664167652974601734_n.jpg?_nc_ht=scontent-lhr3-1.cdninstagram.com&_nc_cat=105")
 }
 img {
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
-   margin-top: 100px;
-   margin-bottom: 100px;
-   width: auto;
-   opacity: .9;
-   float: left;
-   border-image: round;
-   border-radius: 10px;
-   border-width: 2px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: auto;
+    opacity: .9;
+    /* float: left; */
+    /* border-image: round */
+    border-radius: 10px;
+    border-width: 2px;
 }
 .navbar-brand {
- font-family: 'Black Ops One', cursive;
+  font-family: 'Black Ops One', cursive;
 }
 .bg-light {
- background-color: black !important;
- opacity: .8;
+  background-color: black !important;
+  opacity: .8;
 }
 .navbar-light .navbar-brand{
- color: white;
+  color: white;
 }
 .navbar-light .navbar-nav .nav-link{
- color: white;
- font-family: 'Black Ops One', cursive;
+  color: white;
+  font-family: 'Black Ops One', cursive;
 }
 #d-block w-100 {
- margin-top: 100px;
- width:640px;
- height:500px; 
- border-style: solid;
- border-radius: 10px;
- border-width: 2px;
+  /* margin-top: 100px; */
+  /* width:640px;
+  height:500px; */
+  /* border-style: solid; */
+  border-radius: 10px;
+  border-width: 2px;
 }
 body {
- background-repeat: no-repeat;
- background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 h2 {
- margin-top: 315px;
- margin-left: 100px;
- color: white;
- font-style: bold;
- font-family: 'Black Ops One', cursive;
+  margin-top: 315px;
+  margin-left: 100px;
+  color: white;
+  font-style: bold;
+  font-family: 'Black Ops One', cursive;
+}
+h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 5em;
+  letter-spacing: 8px;
+  font-family: 'Press Start 2P';
+  font-weight: 400;
+  /*Create overlap*/
+  
+  margin: 0;
+  line-height: 0;
+  /*Animation*/
+  
+  animation: glitch1 2.5s infinite;
+  margin-top: 310px;
+  /* margin-left: 100px; */
+  color: white;
+  font-style: bold;
+  font-family: 'Black Ops One', cursive;
+}
+h1:nth-child(2) {
+  color: #67f3da;
+  animation: glitch2 2.5s infinite;
+}
+h1:nth-child(3) {
+  color: #f16f6f;
+  animation: glitch3 2.5s infinite;
+}
+/*Keyframes*/
+@keyframes glitch1 {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  7% {
+    transform: skew(-0.5deg, -0.9deg);
+    opacity: 0.75;
+  }
+  10% {
+    transform: none;
+    opacity: 1;
+  }
+  27% {
+    transform: none;
+    opacity: 1;
+  }
+  30% {
+    transform: skew(0.8deg, -0.1deg);
+    opacity: 0.75;
+  }
+  35% {
+    transform: none;
+    opacity: 1;
+  }
+  52% {
+    transform: none;
+    opacity: 1;
+  }
+  55% {
+    transform: skew(-1deg, 0.2deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: none;
+    opacity: 1;
+  }
+  72% {
+    transform: none;
+    opacity: 1;
+  }
+  75% {
+    transform: skew(0.4deg, 1deg);
+    opacity: 0.75;
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes glitch2 {
+  0% {
+    transform: none;
+    opacity: 0.25;
+  }
+  7% {
+    transform: translate(-2px, -3px);
+    opacity: 0.5;
+  }
+  10% {
+    transform: none;
+    opacity: 0.25;
+  }
+  27% {
+    transform: none;
+    opacity: 0.25;
+  }
+  30% {
+    transform: translate(-5px, -2px);
+    opacity: 0.5;
+  }
+  35% {
+    transform: none;
+    opacity: 0.25;
+  }
+  52% {
+    transform: none;
+    opacity: 0.25;
+  }
+  55% {
+    transform: translate(-5px, -1px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: none;
+    opacity: 0.25;
+  }
+  72% {
+    transform: none;
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(-2px, -6px);
+    opacity: 0.5;
+  }
+  80% {
+    transform: none;
+    opacity: 0.25;
+  }
+  100% {
+    transform: none;
+    opacity: 0.25;
+  }
+}
+@keyframes glitch3 {
+  0% {
+    transform: none;
+    opacity: 0.25;
+  }
+  7% {
+    transform: translate(2px, 3px);
+    opacity: 0.5;
+  }
+  10% {
+    transform: none;
+    opacity: 0.25;
+  }
+  27% {
+    transform: none;
+    opacity: 0.25;
+  }
+  30% {
+    transform: translate(5px, 2px);
+    opacity: 0.5;
+  }
+  35% {
+    transform: none;
+    opacity: 0.25;
+  }
+  52% {
+    transform: none;
+    opacity: 0.25;
+  }
+  55% {
+    transform: translate(5px, 1px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: none;
+    opacity: 0.25;
+  }
+  72% {
+    transform: none;
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(2px, 6px);
+    opacity: 0.5;
+  }
+  80% {
+    transform: none;
+    opacity: 0.25;
+  }
+  100% {
+    transform: none;
+    opacity: 0.25;
+  }
+}
+h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 3.8em;
+  letter-spacing: 2px;
+  font-family: 'Press Start 2P';
+  font-weight: 400;
+  /*Create overlap*/
+  
+  margin: 0;
+  line-height: 0;
+  /*Animation*/
+  
+  animation: glitch1 2.5s infinite;
+  margin-top: 62%;
+  margin-left: -50%;
+  color: white;
+  font-style: bold;
+  font-family: 'Black Ops One', cursive;
+  transform: rotate(-90deg);
+}
+.bd-example {
+  /* border-radius: 10px;
+  border-width: 2px; */
+      /* display: block; */
+    margin-left: -50px;
+    /* margin-right: 100px; */
+    margin-top: 15%;
+    margin-bottom: 100px;
+    width: auto;
+    height: auto;
+    opacity: 1;
+    position: absolute;
+}
+.carousel-item {
+  transition-duration: 5s;
+  transition-delay: 10s;
 }

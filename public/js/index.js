@@ -1,47 +1,73 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $athleteName = $("#athlete-name")
+var $athletePosition = $("#athlete-position");
+var $athleteYear = $("#athlete-year");
+var $athleteHeight = $("#athlete-height");
+var $athleteWeight = $("#athlete-weight");
+var $athleteSchool = $("athlete-school");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $playerList = $("#player-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveAthlete: function(athlete) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/athletes",
+      data: JSON.stringify(athlete)
     });
   },
-  getExamples: function() {
+  getAthlete: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/athletes",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deleteAthlete: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/athletes/" + id,
       type: "DELETE"
     });
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+
+// this code is for a dynamically generated dropdown but 
+// might not be needed....
+// app.get("/api/athletes", function(req, res){
+//   res.json().then(function (response) {
+//     // console.log(response);
+//     for (var i = 0; i < 20; i++) {
+//       var element = response.positions[i];
+//       if (element.name) {
+//         // console.log(element.name);
+//         var button = $("<a>")
+//         //trying to add more dropdown options
+//         button.addClass("dropdown-item")
+//         button.addClass("genre-select")
+//         button.attr("data-genre", element.id)
+//         button.text(element.name)
+//         $("#genre-dropdown").append(button)
+//       }
+//     }
+//   });
+// });
+
+// refreshExamples gets new athletes from the db and repopulates the list
+var refreshAthletes = function() {
+  API.getAthlete().then(function(data) {
+    var $athletes = data.map(function(athlete) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .text(athlete.name)
+        .attr("href", "/athletes/" + athlete.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": athlete.id
         })
         .append($a);
 
@@ -54,46 +80,56 @@ var refreshExamples = function() {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $playerList.empty();
+    $playerList.append($athletes);
   });
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
+// handleFormSubmit is called whenever we submit a new athlete
+// Save the new athlete to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var athlete = {
+    name: $athleteName.val().trim(),
+    position: $athletePosition.val().trim(),
+    year: $athleteYear.val().trim(),
+    height: $athleteHeight.val().trim(),
+    weight: $athleteWeight.val().trim(),
+    school: $athleteSchool.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  console.log(athlete);
+
+  if (!(athlete.name && athlete.position && athlete.year && athlete.height && athlete.weight && athlete.school)) {
+    alert("You must enter a value into each field!");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.saveAthlete(athlete).then(function() {
+    refreshAthletes();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $athleteName.val("");
+  $athletePosition.val("");
+  $athleteYear.val("");
+  $athleteHeight.val("");
+  $athleteWeight.val("");
+  $athleteSchool.val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
+// handleDeleteBtnClick is called when an athlete's delete button is clicked
+// Remove the athlete from the db and refresh the list
 var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+  API.deleteAthlete(idToDelete).then(function() {
+    refreshAthletes();
   });
 };
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$playerList.on("click", ".delete", handleDeleteBtnClick);
