@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/styles.css" media="screen" title="no title"> -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -15,7 +20,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -47,16 +52,16 @@
     <form>
         <div class="form-row">
           <div class="col">
-            <input type="text" id="athlete-name" class="form-control" placeholder="First name">
+            <input type="text" id="athlete-firstname" class="form-control" placeholder="First name">
           </div>
           <div class="col">
-            <input type="text" id="athlete-name" class="form-control" placeholder="Last name">
+            <input type="text" id="athlete-lastname" class="form-control" placeholder="Last name">
           </div>
         </div>
         <br>
         <div class="form-group">
             <!-- <label for="inputState">Position</label> -->
-            <select id="inputState" id="athlete-position" class="form-control">
+            <select id="athlete-position" class="form-control">
               <option selected>Choose Position...</option>
             <option>Quarterback</option>
             <option>Running Back</option>
@@ -74,17 +79,23 @@
             </select>
         </div>
         <div class="form-row">
-                <div class="col">
-                  <input type="text" id="athlete-height" class="form-control" placeholder="Height">
-                </div>
-                <div class="col">
-                  <input type="text" id="athlete-weight" class="form-control" placeholder="Weight (lbs.)">
-                </div>
-        </div>
+            <div class="col">
+              <input type="text" id="athlete-height" class="form-control" placeholder="Height">
+            </div>
+            <div class="col">
+              <input type="text" id="athlete-weight" class="form-control" placeholder="Weight (lbs.)">
+            </div>
+            <div class="col">
+                <input type="text" id="athlete-school" class="form-control" placeholder="High School">
+              </div>
+              <div class="col">
+                <input type="text" id="athlete-film" class="form-control" placeholder="Link to film">
+              </div>
+    </div>
         <div class="form-group">
                 <br>
                 <!-- <label for="inputState">Class</label> -->
-                <select id="inputState" id="athlete-year" class="form-control">
+                <select  id="athlete-year" class="form-control">
                   <option selected>Choose Class...</option>
                   <option>2020</option>
                   <option>2021</option>
@@ -92,7 +103,7 @@
                   <option>2023</option>
                 </select>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 
