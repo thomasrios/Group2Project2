@@ -25,7 +25,7 @@ var API = {
   getAthlete: function() {
     return $.ajax({
       url: "api/athletes",
-      type: "GET"
+      type: "GET",
     });
   },
   deleteAthlete: function(id) {
@@ -59,21 +59,29 @@ var API = {
 // }
 // refreshExamples gets new athletes from the db and repopulates the list
 var refreshAthletes = function() {
+  console.log("hey")
   API.getAthlete().then(function(data) {
-
-      var athletesName = $($athletefirstname).val().name;
-      var athletesPos = $(athletePosition).val().position;
-      var athletesYear = $($athleteYear).val().year;
-      var athletesHeight = $($athleteHeight).val().height;
-      var athletesWeight = $($athleteWeight).val().weight;
-      var athletesSchool = $($athleteSchool).val().school;
-      var athletesFilm = $($athleteFilm).val().film;
-
-      $(".table tr:last").after("<tr><td>" + athletesName + "</td><td>" + athletesPos + "</td><td>" + athletesYear + "</td><td>" + athletesHeight + "</td><td>" + athletesWeight + "</td><td>" + athletesSchool + "</td><td>" + athletesFilm + "</td>")
-    
-
-    // $playerList.empty();
-    // $playerList.append($athletes);
+      // var athletesName = $($athletefirstname).val().name;
+      // var athletesPos = $($athletePosition).val().position;
+      // var athletesYear = $($athleteYear).val().year;
+      // var athletesHeight = $($athleteHeight).val().height;
+      // var athletesWeight = $($athleteWeight).val().weight;
+      // var athletesSchool = $($athleteSchool).val().school;
+      // var athletesFilm = $($athleteFilm).val().film;
+      console.log(data);
+      for (var i = 0; i < data.length; i++) {
+        console.log(data[i].name);
+        console.log(data[i].position);
+        console.log(data[i].year);
+        console.log(data[i].height);
+        console.log(data[i].weight);
+        console.log(data[i].film);
+        console.log(data[i].school);
+        var tablerow = `<tr><td>${data[i].name}</td><td>${data[i].position}</td><td>${data[i].year}</td><td>${data[i].height}</td><td>${data[i].weight}</td><td>${data[i].school}</td></tr>`
+        $(".table").append(tablerow)
+      }
+      
+      
   });
 };
 
@@ -83,7 +91,7 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var athlete = {
-    name: $athletefirstname.val().trim() + $athletelastname.val().trim(),
+    name: $athletefirstname.val().trim() + " " +  $athletelastname.val().trim(),
     position: $athletePosition.val().trim(),
     year: $athleteYear.val().trim(),
     height: $athleteHeight.val().trim(),
@@ -93,6 +101,8 @@ var handleFormSubmit = function(event) {
   };
 
   console.log(athlete);
+  console.log(athlete.name);
+  console.log(athlete.position);
 
   if (!(athlete.name && athlete.position && athlete.year && athlete.height && athlete.weight && athlete.school && athlete.film)) {
     alert("You must enter a value into each field!");
@@ -100,7 +110,7 @@ var handleFormSubmit = function(event) {
   }
 
   API.saveAthlete(athlete).then(function() {
-    refreshAthletes();
+    refreshAthletes("this is data");
   });
 
   $athletefirstname.val("");
@@ -128,3 +138,4 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $playerList.on("click", ".delete", handleDeleteBtnClick);
+refreshAthletes();
