@@ -56,34 +56,24 @@ var API = {
 //       }
 //     }
 //   });
-// });
-
+// }
 // refreshExamples gets new athletes from the db and repopulates the list
 var refreshAthletes = function() {
   API.getAthlete().then(function(data) {
-    var $athletes = data.map(function(athlete) {
-      var $a = $("<a>")
-        .text(athlete.name)
-        .attr("href", "/athletes/" + athlete.id);
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": athlete.id
-        })
-        .append($a);
+      var athletesName = $($athletefirstname).val().name;
+      var athletesPos = $(athletePosition).val().position;
+      var athletesYear = $($athleteYear).val().year;
+      var athletesHeight = $($athleteHeight).val().height;
+      var athletesWeight = $($athleteWeight).val().weight;
+      var athletesSchool = $($athleteSchool).val().school;
+      var athletesFilm = $($athleteFilm).val().film;
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
+      $(".table tr:last").after("<tr><td>" + athletesName + "</td><td>" + athletesPos + "</td><td>" + athletesYear + "</td><td>" + athletesHeight + "</td><td>" + athletesWeight + "</td><td>" + athletesSchool + "</td><td>" + athletesFilm + "</td>")
+    
 
-      $li.append($button);
-
-      return $li;
-    });
-
-    $playerList.empty();
-    $playerList.append($athletes);
+    // $playerList.empty();
+    // $playerList.append($athletes);
   });
 };
 
